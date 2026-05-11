@@ -1,5 +1,9 @@
 const board = document.getElementById("gameBoard");
 
+let musicVolume = 0.02;
+let voiceVolume = 1;
+let effectsVolume = 0.5
+
 const maxPairs = 12;
 
 let usedWords = [];
@@ -69,7 +73,7 @@ function generateCards() {
     cards.push({
       type: word,
       mode: "image",
-      content: `<img src="img/${word}.PNG">`
+      content: `<img src="img/${word}.png">`
     });
 
     // 🔤 palabra
@@ -180,13 +184,19 @@ function speak(word) {
   utterance.lang = "en-US"; // inglés
   utterance.rate = 0.9; // velocidad (opcional)
   utterance.pitch = 1;
+  utterance.volume = voiceVolume;
 
   speechSynthesis.speak(utterance);
 }
 
 function playSound(name) {
+
   const audio = new Audio(`audio/${name}.mp3`);
+
+  audio.volume = effectsVolume;
+
   audio.currentTime = 0;
+
   audio.play();
 }
 
@@ -194,8 +204,29 @@ shuffleCards();
 createBoard(); 
 
 const bgMusic = document.getElementById("bgMusic");
-bgMusic.volume = 0.02;
+bgMusic.volume = musicVolume;
 
 document.addEventListener("click", () => {
   bgMusic.play();
 }, { once: true });
+
+const musicSlider = document.getElementById("musicVolume");
+const voiceSlider = document.getElementById("voiceVolume");
+const effectsSlider = document.getElementById("effectsVolume");
+
+musicSlider.addEventListener("input", () => {
+
+  musicVolume = parseFloat(musicSlider.value);
+
+  bgMusic.volume = musicVolume;
+});
+
+voiceSlider.addEventListener("input", () => {
+
+  voiceVolume = parseFloat(voiceSlider.value);
+});
+
+effectsSlider.addEventListener("input", () => {
+
+  effectsVolume = parseFloat(effectsSlider.value);
+});

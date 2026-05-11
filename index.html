@@ -9,6 +9,25 @@
 
 <h1>Juego de Memoria - Inglés</h1>
 
+<div class="volume-container">
+
+  <div class="volume-group">
+    <label>🎵 Música</label>
+    <input type="range" id="musicVolume" min="0" max="1" step="0.01" value="0.02">
+  </div>
+
+  <div class="volume-group">
+    <label>🗣️ Pronunciación</label>
+    <input type="range" id="voiceVolume" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <div class="volume-group">
+    <label>🔊 Efectos</label>
+    <input type="range" id="effectsVolume" min="0" max="1" step="0.01" value="0.5">
+  </div>
+
+</div>
+
 <button onclick="createBoard()">🔄 Nuevas Cartas</button>
 
 <div class="game-board" id="gameBoard"></div>

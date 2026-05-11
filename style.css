@@ -15,13 +15,18 @@ body {
 .game-board {
   display: grid;
 
-  grid-template-columns: repeat(6, 100px);
+  grid-template-columns: repeat(6, 90px);
 
   gap: 10px;
 
   justify-content: center;
 
   margin-top: 20px;
+
+  width: fit-content;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
@@ -87,3 +92,89 @@ body {
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .game-board {
+
+    grid-template-columns: repeat(4, 70px);
+
+    gap: 8px;
+  }
+
+  .card {
+    width: 70px;
+    height: 90px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .volume-container {
+    width: 90%;
+
+    margin: auto;
+  }
+
+  .volume-group {
+    margin-bottom: 10px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
+}
+
+.volume-container {
+
+  position: fixed;
+
+  top: 20px;
+
+  right: 20px;
+
+  background: rgba(255,255,255,0.85);
+
+  padding: 10px 12px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  z-index: 999;
+
+  backdrop-filter: blur(5px);
+}
+
+.volume-group {
+
+  margin-bottom: 8px;
+
+  text-align: left;
+}
+
+.volume-group label {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-weight: bold;
+}
+
+input[type="range"] {
+
+  width: 120px;
+}
+
+.volume-group label {
+
+  font-size: 14px;
+
+  font-weight: bold;
+}

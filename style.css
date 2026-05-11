@@ -245,3 +245,61 @@ input[type="range"] {
   }
 
 }
+
+.victory-message {
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  background: linear-gradient(135deg, #ffe066, #ffb703);
+
+  color: white;
+
+  font-size: 60px;
+
+  font-weight: bold;
+
+  padding: 30px 50px;
+
+  border-radius: 25px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+  z-index: 5000;
+
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+
+  transition: transform 0.4s ease;
+
+  pointer-events: none;
+
+  font-family: Arial, sans-serif;
+}
+
+/* mostrar */
+
+.victory-message.show {
+
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+  .victory-message {
+
+    font-size: 34px;
+
+    padding: 20px 30px;
+
+    width: 80%;
+  }
+
+}

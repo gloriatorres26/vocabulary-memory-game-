@@ -1,6 +1,6 @@
 const board = document.getElementById("gameBoard");
 
-let musicVolume = 0.02;
+let musicVolume = 0.13;
 let voiceVolume = 1;
 let effectsVolume = 0.5
 
@@ -154,7 +154,7 @@ function checkMatch() {
     if (matches === totalMatches) {
       setTimeout(() => {
         playSound("win"); // 🎉 sonido de victoria
-        alert("🎉 ¡Ganaste!");
+        showVictory();
       }, 500);
     }
 
@@ -193,7 +193,7 @@ function playSound(name) {
 
   const audio = new Audio(`audio/${name}.mp3`);
 
-  audio.volume = effectsVolume;
+audio.volume = effectsVolume * effectsVolume;
 
   audio.currentTime = 0;
 
@@ -204,13 +204,15 @@ shuffleCards();
 createBoard(); 
 
 const bgMusic = document.getElementById("bgMusic");
-bgMusic.volume = musicVolume;
+
+bgMusic.volume = musicVolume * musicVolume;
 
 document.addEventListener("click", () => {
   bgMusic.play();
 }, { once: true });
 
 const musicSlider = document.getElementById("musicVolume");
+musicVolume = parseFloat(musicSlider.value);
 const voiceSlider = document.getElementById("voiceVolume");
 const effectsSlider = document.getElementById("effectsVolume");
 
@@ -218,7 +220,7 @@ musicSlider.addEventListener("input", () => {
 
   musicVolume = parseFloat(musicSlider.value);
 
-  bgMusic.volume = musicVolume;
+  bgMusic.volume = musicVolume * musicVolume;
 });
 
 voiceSlider.addEventListener("input", () => {
@@ -230,3 +232,16 @@ effectsSlider.addEventListener("input", () => {
 
   effectsVolume = parseFloat(effectsSlider.value);
 });
+
+function showVictory() {
+
+  const victory = document.getElementById("victoryMessage");
+
+  victory.classList.add("show");
+
+  setTimeout(() => {
+
+    victory.classList.remove("show");
+
+  }, 2500);
+}

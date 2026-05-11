@@ -14,7 +14,7 @@
 
   <div class="volume-group">
     <label>🎵 Música</label>
-    <input type="range" id="musicVolume" min="0" max="1" step="0.01" value="0.02">
+    <input type="range" id="musicVolume" min="0" max="1" step="0.01" value="0.13">
   </div>
 
   <div class="volume-group">
@@ -32,6 +32,10 @@
 <button onclick="createBoard()">🔄 Nuevas Cartas</button>
 
 <div class="game-board" id="gameBoard"></div>
+
+<div id="victoryMessage" class="victory-message">
+  🎉 VICTORY 🎉
+</div>
 
 <audio id="bgMusic" loop>
   <source src="audio/music.mp3" type="audio/mpeg">

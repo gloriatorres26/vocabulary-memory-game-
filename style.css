@@ -140,37 +140,45 @@ body {
 
   /* PANEL DE VOLUMEN */
 
-  .volume-container {
+.volume-container {
 
-    position: fixed;
+  position: fixed;
 
-    top: 10px;
+  bottom: 10px;
 
-    right: 8px;
+  left: 50%;
 
-    padding: 6px 8px;
+  transform: translateX(-50%);
 
-    border-radius: 10px;
+  display: flex;
 
-    transform: scale(0.85);
+  gap: 12px;
 
-    transform-origin: top right;
-  }
+  padding: 8px 12px;
 
-  .volume-group {
+  border-radius: 15px;
 
-    margin-bottom: 4px;
-  }
+  background: rgba(255,255,255,0.92);
+
+  z-index: 999;
+}
+
+.volume-group {
+
+  margin-bottom: 0;
+
+  text-align: center;
+}
 
   .volume-group label {
 
     font-size: 11px;
   }
 
-  input[type="range"] {
+input[type="range"] {
 
-    width: 80px;
-  }
+  width: 65px;
+}
 
 }
 

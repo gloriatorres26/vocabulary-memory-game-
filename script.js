@@ -73,7 +73,7 @@ function generateCards() {
     cards.push({
       type: word,
       mode: "image",
-      content: `<img src="img/${word}.png">`
+      content: `<img src="img/${word}.PNG">`
     });
 
     // 🔤 palabra

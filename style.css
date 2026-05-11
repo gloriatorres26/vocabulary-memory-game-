@@ -167,15 +167,20 @@ body {
   gap: 8px;
 }
 
+.volume-container * {
+
+  box-sizing: border-box;
+}
+
 .volume-group {
 
-  display: flex;
+  display: inline-block;
 
-  flex-direction: column;
+  margin: 0 4px;
 
-  align-items: center;
+  text-align: center;
 
-  margin: 0;
+  vertical-align: top;
 }
 
 .volume-group label {

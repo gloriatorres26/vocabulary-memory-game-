@@ -93,7 +93,7 @@ let firstCard = null;
 let secondCard = null;
 let lock = false;
 let matches = 0;
-const totalMatches = words.length;
+const totalMatches = maxPairs;
 
 
 function createBoard() {

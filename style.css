@@ -3,7 +3,7 @@ body {
   text-align: center;
   background: #f2f2f2;
   margin: 0;
-  overflow-x: hidden;
+overflow-x: clip;
 
   background-image: url("img/background.jpg");
   background-size: cover;
@@ -91,6 +91,54 @@ body {
   padding: 5px;
   box-sizing: border-box;
 }
+/* PANEL NORMAL PC */
+
+.volume-container {
+
+  position: fixed;
+
+  top: 20px;
+
+  right: 20px;
+
+  background: rgba(255,255,255,0.85);
+
+  padding: 10px 12px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  z-index: 999;
+
+  backdrop-filter: blur(5px);
+}
+
+.volume-group {
+
+  margin-bottom: 8px;
+
+  text-align: left;
+}
+
+.volume-group label {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-weight: bold;
+
+  font-size: 14px;
+}
+
+input[type="range"] {
+
+  width: 120px;
+}
+
+
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
 
@@ -138,110 +186,62 @@ body {
     margin-top: 10px;
   }
 
-  /* PANEL DE VOLUMEN */
+  /* PANEL MOVIL */
 
-.volume-container {
+  .volume-container {
 
-  position: fixed;
+    position: fixed;
 
-  bottom: 10px;
+    bottom: 10px;
 
-  left: 50%;
+    left: 50%;
 
-  transform: translateX(-50%);
+    transform: translateX(-50%);
 
-  width: auto;
+    top: auto;
 
-  padding: 6px 10px;
+    right: auto;
 
-  border-radius: 12px;
+    width: auto;
 
-  background: rgba(255,255,255,0.92);
+    max-width: 95%;
 
-  z-index: 999;
+    padding: 8px 10px;
 
-  display: flex;
+    border-radius: 12px;
 
-  align-items: center;
+    background: rgba(255,255,255,0.92);
 
-  gap: 8px;
-}
+    z-index: 999;
 
-.volume-container * {
+    display: flex;
 
-  box-sizing: border-box;
-}
+    justify-content: center;
 
-.volume-group {
+    align-items: center;
 
-  display: inline-block;
+    gap: 8px;
 
-  margin: 0 4px;
+    flex-wrap: wrap;
+  }
 
-  text-align: center;
+  .volume-group {
 
-  vertical-align: top;
-}
+    margin: 0;
 
-.volume-group label {
+    text-align: center;
+  }
 
-  font-size: 10px;
+  .volume-group label {
 
-  margin-bottom: 2px;
-}
+    font-size: 10px;
 
-input[type="range"] {
+    margin-bottom: 2px;
+  }
 
-  width: 55px;
-}
+  input[type="range"] {
 
-}
+    width: 70px;
+  }
 
-.volume-container {
-
-  position: fixed;
-
-  top: 20px;
-
-  right: 20px;
-
-  background: rgba(255,255,255,0.85);
-
-  padding: 10px 12px;
-
-  border-radius: 15px;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-
-  z-index: 999;
-
-  backdrop-filter: blur(5px);
-}
-
-.volume-group {
-
-  margin-bottom: 8px;
-
-  text-align: left;
-}
-
-.volume-group label {
-
-  display: block;
-
-  margin-bottom: 5px;
-
-  font-weight: bold;
-}
-
-input[type="range"] {
-
-  width: 120px;
-}
-
-.volume-group label {
-
-  font-size: 14px;
-
-  font-weight: bold;
 }
